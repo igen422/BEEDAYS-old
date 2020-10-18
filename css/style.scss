@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+$fz1: 4.2rem; // 大見出し
+$fz2: 2.4rem; // 中見出し
+$fz3: 1.2rem; // copylight
+$fz4: 1.6rem; // 本文
+
+
+$cl1: #fff;
+// $cl1: rgba(#707070, 0.2); // ベースカラー
+// $cl1: rgba(151, 210, 202, 0.7);
+
+$cl2: #000; // メインカラー
+
+$cl3: rgba(151, 210, 202, 1);
+// $cl3: #fff; //メインカラー
+
+// メディアクエリの定義
+$screen-md: 745px;
+
+$bp-list: (
+  "md": "screen and (max-width: #{$screen-md})",
+);
+
+@mixin screen-mq($bp-key) {
+  @media #{map-get($bp-list, $bp-key)} {
+    @content;
+  }
+}
+
+//  -----------------------------
+//            Base
+//  -----------------------------
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $cl2;
+  background-color: $cl1;
+  margin: 0;
+  font-size: $fz4;
+  box-sizing: border-box;
+  line-height: 1.5;
+  position: relative;
+  font-family: fot-tsukubrdgothic-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+
+//  -----------------------------
+//        JSで使うクラス
+//  -----------------------------
+
+// 上にフワッ(Before)
+.effect-fade-up {
+  opacity: 0;
+  transform : translate(0, 70px);
+  transition : all 1s;
+}
+
+// 左にフワッ(Before)
+.effect-fade-l{
+  opacity: 0;
+  transform : translate(70px, 0);
+  transition : all 1s;
+}
+
+// 右にフワッ(Before)
+.effect-fade-r{
+  opacity: 0;
+  transform : translate(-70px, 0);
+  transition : all 1s;
+}
+
+// 表示クラス(After)
+.effect-scroll {
+  opacity : 1;
+  transform : translate(0, 0);
+  }
+
+
+//  -----------------------------
+//            Header
+//  -----------------------------
+
+@import "header";
+
+//  -----------------------------
+//            Hero
+//  -----------------------------
+
+@import "hero";
+
+//  -----------------------------
+//            SECTION
+//  -----------------------------
+
+@import "section";
+
+//  -----------------------------
+//            COCEPT
+//  -----------------------------
+
+@import "concept";
+
+// sec-img1 を含む
+
+//  -----------------------------
+//            PRODUCT
+//  -----------------------------
+
+@import "product";
+
+// sec-img2 を含む
+
+//  -----------------------------
+//            WORKSHOP
+//  -----------------------------
+
+@import "workshop";
+
+//  -----------------------------
+//              SHOP
+//  -----------------------------
+
+@import "shop";
+
+//  -----------------------------
+//             CONTACT
+//  -----------------------------
+@import "contact";
+
+//  -----------------------------
+//              FOOTER
+//  -----------------------------
+
+@import "footer";
+

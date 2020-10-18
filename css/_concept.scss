@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.concept {
+  * {
+    outline: 1px solid red;
+  }
+
+  &-wrapper {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+
+    @include screen-mq(md) {
+      width: 60%;
+    }
+
+    .concept-title {
+      font-weight: 700;
+    }
+
+    .concept-sign {
+      margin-top: 42px;
+    }
+  }
+}
+
+//  -----------------------------
+//            SEC-IMG1
+//  -----------------------------
+
+.sec-img1 {
+  // ----height----
+  $img1-height: 90vh;
+
+  @include screen-mq(md) {
+    $img1-height:60vh;
+  }
+  height: $img1-height;
+  min-height: $img1-height;
+  // --------------
+
+  width: 85%;
+  margin-right: auto;
+  background: url(/img/test.jpeg) center/cover no-repeat;
+
+}

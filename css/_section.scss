@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+$space-title: 300px; //sectionマージン
+$space-content: 64px; //textマージントップ
+
+.section {
+  padding: $space-title 0;
+}
+
+.section-title {
+  font-size: $fz1;
+}
+
+.section-text {
+  margin-top: $space-content;
+}

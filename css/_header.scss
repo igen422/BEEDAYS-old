@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+.header {
+  // display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+
+  &-wrapper {
+    // outline: 1px solid red;
+    width: 95%;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include screen-mq(md) {
+      width: 90%;
+      height: 80px;
+    }
+
+    .header-logo {
+      width: 150px;
+      visibility: hidden;
+      visibility: visible;
+      @include screen-mq(md) {
+        width: 120px;
+      }
+    }
+  }
+}
+
+.pcnav {
+  display: flex;
+  position: absolute;
+  right: 0;
+
+  @include screen-mq(md) {
+    display: none;
+  }
+
+  &-list {
+    &:not(:first-child) {
+      margin-left: 64px;
+    }
+
+    &-btn {
+      transition: font-size 0.9s;
+    }
+  }
+}
+
+// ハンバーガーメニュー共通部品
+@mixin hamburger-parts {
+  display: block;
+  box-sizing: border-box;
+  background-color: black;
+  border-radius: 30%;
+}
+
+.spnav {
+  display: none;
+  @include screen-mq(md) {
+    display: block;
+    
+    &-hamburger {
+      width: 30px;
+      height: 23px;
+
+      &-menu {
+        // ハンバーガートップ
+        @include hamburger-parts();
+        width: 20px;
+        height: 3px;
+        margin: 0 auto;
+        position: relative;
+
+        // ハンバーガーセンター
+        &::before {
+          @include hamburger-parts();
+          content: "";
+          width: 25px;
+          height: 3px;
+          position: absolute;
+          top: 10px;
+        }
+
+        // ハンバーガーボトム
+        &::after {
+          @include hamburger-parts();
+          content: "";
+          width: 30px;
+          height: 3px;
+          position: absolute;
+          top: 20px;
+        }
+      }
+    }
+  }
+}
+
+// pcnavのスクロールリサイズに使用するクラス。
+.pcnav-small {
+  font-size: 12px;
+}

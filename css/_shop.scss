@@ -1,0 +1,61 @@
+@charset "UTF-8"; 
+
+.shop {
+  // width: 85%;
+  padding: 0 15%;
+  margin-top: 1480px;
+  padding-bottom: 375px;
+  position: relative;
+
+  &-container {
+    text-align: right;
+  }
+  &-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+  }
+
+  &-svg-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+
+    path {
+      fill: $cl3;
+    }
+  }
+}
+
+.shop-card {
+  margin-top: $space-content;
+  width: calc((100% - 40px) / 2);
+  // margin-left: auto;
+  text-align: right;
+
+  &-img {
+    width: 100%;
+  }
+
+  &-info {
+    margin-top: 32px;
+  }
+
+  &-title {
+    font-size: $fz2;
+  }
+
+  &-address {
+    margin-top: 32px;
+  }
+
+  &-tel {
+    margin-top: 16px;
+  }
+
+  &-web {
+    margin-top: 16px;
+  }
+}

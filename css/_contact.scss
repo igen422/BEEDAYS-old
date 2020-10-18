@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+.contact {
+  padding: 120px 0;
+  // padding-bottom: 120px;
+  background: $cl3;
+  color: $cl1;
+
+  &-wrapper {
+    width: 64%;
+    margin: 0 auto;
+    text-align: center;
+
+    .contact-form {
+      margin-top: 72px;
+      height: 800px;
+      background-color: $cl1;
+      border-radius: 20px;
+    }
+
+    .submit-btn {
+      margin-top: 72px;
+      padding: 0.5rem 2rem;
+      border-radius: 20px;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 32%;
+    height: 2px;
+    background: $cl1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+  }
+}

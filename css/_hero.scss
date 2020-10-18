@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.hero {
+  position: relative;
+  margin-top: 10vh;
+
+  &-bg {
+    // ----height----
+    $bg-height: 85vh;
+    height: $bg-height;
+    min-height: $bg-height;
+    // --------------
+    width: 60%;
+    margin-left: auto;
+    background: url(/img/hero.jpeg) right/cover no-repeat;
+    position: relative;
+
+    @include screen-mq(md) {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .hero-svg-wrapper {
+      width: 100%;
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+
+      @include screen-mq(md) {
+        bottom: -10px;
+      }
+
+      path {
+        fill: $cl1;
+      }
+    }
+  }
+
+  &-text {
+    width: 30%;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+
+    @include screen-mq(md) {
+      position: static;
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+  }
+
+  &-scroll {
+    color: $cl1;
+    font-size: 20px;
+    position: absolute;
+    bottom: 100px;
+    right: 5%;
+    transform: rotate(90deg);
+
+    @include screen-mq(md) {
+      color: $cl1;
+      font-weight: bold;
+      position: absolute;
+      bottom: 35%;
+      right: 10%;
+    }
+  }
+}
